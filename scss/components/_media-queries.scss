@@ -1,11 +1,50 @@
-body {
-    @include mq(lg) {
+@include mq(lg) {
+    body {
         font-size: 1.2rem;
     }
 }
 
+@include mq(med) {
+    .grid {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        "header header"
+        "navigation main";
+        width: 90vw;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-header,
+    .alert,
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+        width:45vw;
+    }
+
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: span 1 / 3;
+        width:45vw;
+    }
+
+
+
+
+}
+
 /* ============================================= */
-/*              Header                           */
+/*                  Header                       */
 /* ============================================= */
 
 
