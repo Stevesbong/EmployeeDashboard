@@ -1,0 +1,21 @@
+.dashboard-header {
+    @include flexlayout() {
+        justify-content: space-between;
+    }
+    padding: 0 1.25em
+}
+
+.headline {
+    margin: 0.5em 0;
+    font-weight: 400;
+}
+
+.main-header-search {
+    margin: auto 0;
+    width: 30%;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+}
