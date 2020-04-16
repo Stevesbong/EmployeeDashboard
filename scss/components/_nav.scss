@@ -1,6 +1,14 @@
-a {
-    width: 15%;
-    padding: 10px 20px;
+nav a {
+    width: 18%;
+    text-align: center;
+    margin: 5px 0;
     // border need to add when hover
     // border-bottom: 2px solid red;
+}
+
+nav img {
+    width: 50%;
+    padding: 5px;
+    // border need to add when hover
+    // border-left: 2px solid red;
 }

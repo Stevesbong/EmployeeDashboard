@@ -51,8 +51,9 @@ $color-sky: #b7d7e8;
 // Basic Text Color
 
 $text-gray: #222222;
-$text-gray-lighter: #666666;
-$text-gray-lightest: #757575;
+$text-gray-light: #666666;
+$text-gray-lighter: #757575;
+$text-gray-lightest: #d1d1d1;
 $text-red: #ee3322;
 $text-pink:#e40c78;
 $text-orange: #f47f16;
@@ -66,7 +67,7 @@ $text-green: #68af15;
 
 
  /* ============================================= */
- /* Media Query Points */
+ /*             Media Query Points                */
  /* ============================================= */
 
 $breakpoints: (

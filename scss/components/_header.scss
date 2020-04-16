@@ -8,31 +8,33 @@ header {
 
     & span {
         font-weight: 100;
+        font-size: 0.95em;
     }
 }
        
 .info {
     @include flexlayout();
-    
-    & > * {
-        // margin: auto 3px;
-        // padding: 0 5px;
-    }
 
     & .svg {
-        margin: auto 10px;
-        padding: 10px
+        margin: auto 0px;
+        padding: 0 5px
     }
 
     & .bell {
-        width: 36px;
-        margin-right: 5px;
-        padding: 5px;
+        width: 45px;
+        // margin-right: 5px;
+        padding: 5px 10px;
         border-right: 2px solid red;
     }
 }
 
 .header-img {
-    width: 40px;
+    width: 58px;
+    padding: 7px;
     border-radius: 50%;
 }
+
+// test animation is working
+// .svg:hover .bell {
+    // transform: scale(2);
+// }

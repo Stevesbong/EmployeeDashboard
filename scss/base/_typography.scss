@@ -2,20 +2,25 @@
     box-sizing: border-box;
 }
 
-html {
-    background: url(/img/backgroundimg2.jpg) no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;
-}
-
 body {
     font-family: 'Merriweather', Arial, sans-serif;
     color: $main-color;
+    font-size: 0.5rem;
     min-height: 100vh;
     max-width: 1800px;
     // display: flex;
     // flex-direction: row;
     // justify-content: center;
+}
+
+h1 {
+    font-size: 1.11rem;
+    margin: auto 0;
+}
+
+h3 {
+    font-size: 0.57rem;
+    margin: auto 0;
 }
 
 // personal hr line default
@@ -30,6 +35,8 @@ hr.line {
         rgba(0, 0, 0, 0.75),
         rgba(0, 0, 0, 0));
 }
+
+// personal hr line default
 
 .grid {
     display: grid;
@@ -57,6 +64,20 @@ nav {
 main {
     grid-area: main;
     display: grid;
+}
+
+.alert {
+    padding: 0 15px;
+    background-color: $main-purple;
+    color: #fff
+}
+
+.alert-banner p {
+    display: inline-block;
+}
+.alert-banner p:last-of-type {
+    float: right;
+    cursor: pointer;
 }
 
 .widget-container-full,

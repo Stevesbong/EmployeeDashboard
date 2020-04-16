@@ -8,7 +8,7 @@
 /* Default Color */
 /* ============================================= */
 /* ============================================= */
-/* Media Query Points */
+/*             Media Query Points                */
 /* ============================================= */
 /* ============================================= */
 /* Base Imports */
@@ -361,17 +361,22 @@ ol li {
   box-sizing: border-box;
 }
 
-html {
-  background: url(/img/backgroundimg2.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
-}
-
 body {
   font-family: "Merriweather", Arial, sans-serif;
   color: #757575;
+  font-size: 0.5rem;
   min-height: 100vh;
   max-width: 1800px;
+}
+
+h1 {
+  font-size: 1.11rem;
+  margin: auto 0;
+}
+
+h3 {
+  font-size: 0.57rem;
+  margin: auto 0;
 }
 
 hr.line {
@@ -405,6 +410,21 @@ main {
   display: grid;
 }
 
+.alert {
+  padding: 0 15px;
+  background-color: #6645dd;
+  color: #fff;
+}
+
+.alert-banner p {
+  display: inline-block;
+}
+
+.alert-banner p:last-of-type {
+  float: right;
+  cursor: pointer;
+}
+
 .widget-container-full,
 .widget-container-half {
   width: 90vw;
@@ -413,10 +433,6 @@ main {
 /* ============================================= */
 /* Components Imports */
 /* ============================================= */
-main {
-  padding: 0 20px;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -426,51 +442,61 @@ header {
 }
 header span {
   font-weight: 100;
+  font-size: 0.95em;
 }
 
 .info {
   display: flex;
 }
 .info .svg {
-  margin: auto 10px;
-  padding: 10px;
+  margin: auto 0px;
+  padding: 0 5px;
 }
 .info .bell {
-  width: 36px;
-  margin-right: 5px;
-  padding: 5px;
+  width: 45px;
+  padding: 5px 10px;
   border-right: 2px solid red;
 }
 
 .header-img {
-  width: 40px;
+  width: 58px;
+  padding: 7px;
   border-radius: 50%;
 }
 
-a {
-  width: 15%;
-  padding: 10px 20px;
+nav a {
+  width: 18%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+nav img {
+  width: 50%;
+  padding: 5px;
 }
 
 .dashboard-header {
   display: flex;
-  justify-content: space-between;
-  padding: 0 1.25em;
 }
 
 .headline {
-  margin: 0.5em 0;
+  margin: auto 20px;
   font-weight: 400;
 }
 
 .main-header-search {
-  margin: auto 0;
-  width: 30%;
+  width: 100%;
+  text-align: right;
+  background-color: #d1d1d1;
+  border-left: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  border-bottom-left-radius: 10px;
 }
 
-input {
-  width: 100%;
-  padding: 5px;
+.main-header-search input {
+  width: 50%;
+  padding: 5px 10px;
+  margin: 0.83em;
 }
 
 .traffic-header {
@@ -497,6 +523,7 @@ input {
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-columns: 50%;
+    padding: 0 10px;
   }
 
   .widget-container-full {
