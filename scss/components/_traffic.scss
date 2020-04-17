@@ -4,7 +4,20 @@
     }
 }
 
+.traffic-header,
+.traffic-header h3 {
+    font-size: 0.66rem;
+    font-weight: bold;
+}
+
 .traffic-nav li {
     display: inline-block;
-    padding: 0 10px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 15px;
+
+    &:hover {
+        background-color: $color-success;
+        color: #fff;
+    }
 }

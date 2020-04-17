@@ -10,9 +10,9 @@
 .main-header-search {
     width: 100%;
     text-align: right;
-    background-color: $text-gray-lightest;
-    border-left: 1px solid $text-gray-lightest;
-    border-bottom: 1px solid $text-gray-lightest;
+    background-color: $gray-lightest;
+    border-left: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
     border-bottom-left-radius: 10px;
 }
 
@@ -20,4 +20,6 @@
     width: 50%;
     padding: 5px 10px;
     margin: 0.83em;
+    border: inset 0 white;
+    border-radius: 5px ;
 }

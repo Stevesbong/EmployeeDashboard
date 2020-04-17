@@ -377,6 +377,7 @@ h1 {
 h3 {
   font-size: 0.57rem;
   margin: auto 0;
+  text-transform: uppercase;
 }
 
 hr.line {
@@ -410,10 +411,18 @@ main {
   display: grid;
 }
 
+.daily,
+.mobile {
+  margin-top: 10px;
+  padding: 15px 0;
+  border-top: 1px solid #d1d1d1;
+}
+
 .alert {
   padding: 0 15px;
   background-color: #6645dd;
   color: #fff;
+  margin: 0.83em 0;
 }
 
 .alert-banner p {
@@ -428,6 +437,7 @@ main {
 .widget-container-full,
 .widget-container-half {
   width: 90vw;
+  margin: auto;
 }
 
 /* ============================================= */
@@ -455,7 +465,7 @@ header span {
 .info .bell {
   width: 45px;
   padding: 5px 10px;
-  border-right: 2px solid red;
+  border-right: 2px solid #0077b5;
 }
 
 .header-img {
@@ -467,12 +477,15 @@ header span {
 nav a {
   width: 18%;
   text-align: center;
-  margin: 5px 0;
+}
+
+nav a:hover img {
+  border-bottom: 2px solid #63cc82;
 }
 
 nav img {
   width: 50%;
-  padding: 5px;
+  padding: 6px 5px;
 }
 
 .dashboard-header {
@@ -497,6 +510,8 @@ nav img {
   width: 50%;
   padding: 5px 10px;
   margin: 0.83em;
+  border: inset 0 white;
+  border-radius: 5px;
 }
 
 .traffic-header {
@@ -504,9 +519,21 @@ nav img {
   justify-content: space-between;
 }
 
+.traffic-header,
+.traffic-header h3 {
+  font-size: 0.66rem;
+  font-weight: bold;
+}
+
 .traffic-nav li {
   display: inline-block;
-  padding: 0 10px;
+  padding: 5px 5px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.traffic-nav li:hover {
+  background-color: #63cc82;
+  color: #fff;
 }
 
 @media (min-width: 1024px) {
@@ -531,7 +558,7 @@ nav img {
   }
 
   .widget-container-half {
-    width: 45vw;
+    width: 43vw;
   }
 
   .dashboard-header,
@@ -561,9 +588,27 @@ nav img {
   nav a {
     padding: 0;
   }
+  nav a:hover img {
+    border-left: 2px solid #63cc82;
+    border-bottom: none;
+  }
   nav img {
     width: 80%;
     padding: 10px 0 10px 10px;
+  }
+
+  .daily,
+.mobile {
+    border-bottom: 1px solid #d1d1d1;
+  }
+
+  .daily {
+    padding-right: 10px;
+  }
+
+  .mobile {
+    border-left: 1px solid #d1d1d1;
+    padding-left: 10px;
   }
 }
 /* ============================================= */

@@ -21,6 +21,7 @@ h1 {
 h3 {
     font-size: 0.57rem;
     margin: auto 0;
+    text-transform: uppercase;
 }
 
 // personal hr line default
@@ -66,10 +67,20 @@ main {
     display: grid;
 }
 
+.daily,
+.mobile {
+    margin-top: 10px;
+    padding: 15px 0;
+    border-top: 1px solid $gray-lightest;
+}
+
+
+
 .alert {
     padding: 0 15px;
     background-color: $main-purple;
-    color: #fff
+    color: #fff;
+    margin: 0.83em 0;
 }
 
 .alert-banner p {
@@ -83,4 +94,5 @@ main {
 .widget-container-full,
 .widget-container-half {
     width: 90vw;
+    margin: auto;
 }
