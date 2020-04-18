@@ -13,7 +13,6 @@
 
 .social-container {
     @include flexlayout() {
-        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
@@ -26,9 +25,7 @@
 
 }
 .social-image {
-    @include flexlayout() {
-        justify-content: space-around;
-    }
+    @include flexlayout();
     width: 80px;
     height: 80px;
     margin-right: 1rem;
@@ -37,7 +34,7 @@
 }
 
 #Layer_1 {
-    margin:auto;
+    margin: auto;
     width: 45px;
     height: 45px;
 }

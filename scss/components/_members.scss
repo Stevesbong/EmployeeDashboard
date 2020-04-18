@@ -36,9 +36,9 @@
 .members-text {
     margin: auto 0;
     margin-right: 10px;
-}
 
-.members-text p {
-    margin: 0;
+    & p {
+        margin: 0;
+    }
 }
 

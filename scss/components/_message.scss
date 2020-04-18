@@ -2,7 +2,6 @@
     @include flexlayout() {
         flex-direction: column;
     }
-
     padding: 0 15px;
 }
 
@@ -15,7 +14,7 @@
         flex-direction: column;
     }
 
-    & input[type=text],
+    & input,
     textarea,
     button {
         margin: 10px auto;

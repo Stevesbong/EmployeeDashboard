@@ -1,14 +1,20 @@
-nav a {
-    width: 18%;
-    text-align: center;
-}
+nav {
+    @include flexlayout() {
+        flex-direction: row;
+        justify-content: center;
+    }
 
-nav a:hover img {
-    border-bottom: 2px solid $color-success;
-}
+    & a{
+        width: 18%;
+        text-align: center;
+        
+        &:hover img {
+            border-bottom: 2px solid $color-success;
+        }
+    }
 
-nav img {
-    width: 50px;
-    padding: 6px 5px;
-    // border need to add when hover
+    & img {
+        width: 50px;
+        padding: 6px 5px;
+    }
 }

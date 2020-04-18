@@ -8,9 +8,6 @@ body {
     font-size: 0.8rem;
     min-height: 100vh;
     max-width: 1800px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
 }
 
 h1 {
@@ -26,6 +23,10 @@ a {
     text-decoration: none;
 }
 
+
+/* ============================================= */
+/*                  Grid Layout                  */
+/* ============================================= */
 
 .grid {
     display: grid;
@@ -44,10 +45,6 @@ a {
 nav {
     grid-area: navigation;
     background-color: $nav-bar;
-    @include flexlayout() {
-        flex-direction: row;
-        justify-content: center;
-    }
 }
 
 main {
@@ -56,12 +53,14 @@ main {
 
 .widget-container-full,
 .widget-container-half {
-    width: 95vw;
+    width: 90vw;
+    margin: auto;
 }
 
-.mobile {
-    padding-bottom: 15px;
-}
+
+/* ============================================= */
+/*                 Alert display                 */
+/* ============================================= */
 
 .alert {
     padding: 0 15px;
@@ -78,14 +77,18 @@ main {
     cursor: pointer;
 }
 
-.widget-container-full,
-.widget-container-half {
-    width: 90vw;
-    margin: auto;
+
+/* ============================================= */
+/*                  Mobile                       */
+/* ============================================= */
+
+.mobile {
+    border-top: 1px solid $gray-lightest;
 }
 
-
-
+.mobile {
+    padding-bottom: 15px;
+}
 
 
 
