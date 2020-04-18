@@ -1,11 +1,15 @@
-header {
+.header {
     @include flexlayout() {
         justify-content: space-between;
+        flex-direction: row;
     }
-    background-color: $main-purple;
-    padding: 0 20px;
+    background-color: $main-background;
     color: #fff;
 
+    & h1 {
+        padding: 0 20px;
+    }
+    
     & span {
         font-weight: 100;
         font-size: 0.95em;
@@ -16,25 +20,42 @@ header {
     @include flexlayout();
 
     & .svg {
-        margin: auto 0px;
-        padding: 0 5px
+        position: relative;
+        margin: auto 0.7em auto 0;
+        padding: 0 5px;
+        border-right: 2px solid $linkedin-color;
     }
 
     & .bell {
         width: 45px;
-        // margin-right: 5px;
+        margin-right: 10px;
         padding: 5px 10px;
-        border-right: 2px solid $linkedin-color;
+        fill: #fff;
+    }
+    & .header-img {
+        width: 58px;
+        height: 58px;
+        padding: 7px;
+        border-radius: 50%;
+    }
+
+    & h3 {
+        padding:5px;
     }
 }
 
-.header-img {
-    width: 58px;
-    padding: 7px;
+#notifications {
+    position: absolute;
+    bottom: 30px;
+    left: 35px;
+    padding: 5px;
+    background-color: $color-success;
     border-radius: 50%;
 }
 
-// test animation is working
-// .svg:hover .bell {
-    // transform: scale(2);
-// }
+.info .svg:hover .bell {
+    stroke: $color-error;
+    stroke-width: 3px;
+    animation: shake .5s;
+}
+

@@ -168,12 +168,13 @@ let mobileChart = new Chart(mobileCanvas, {
 /*                 Messaging Section             */
 /* ============================================= */
 
-const user = document.getElementById("userfield");
+const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
-send.addEventListener('click', () => {
-
+send.addEventListener('click', (e) => {
+    
+    e.preventDefault();
     if ( user.value === "" && message.value === "" ) {
         alert("Please fill out user and message fields before sending");
     } else if ( user.value === "" ) {
@@ -186,33 +187,48 @@ send.addEventListener('click', () => {
 } );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================= */
-/*                 Messaging Section             */
+/*                 MediaQuery JS Testing         */
 /* ============================================= */
 
-const xs = window.matchMedia( "(min-width: 320px)" );
-const med = window.matchMedia( "(min-width: 768px)" );
-const lg = window.matchMedia( "(min-width: 1024px)" );
-window.addEventListener('resize', function widthChange() {
-    if (xs.matches) {
-        console.log('xs')
-        trafficChart.options.scales.xAxes[0].ticks.fontSize = 8
-        trafficChart.options.scales.yAxes[0].ticks.fontSize = 8
-        console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-    } 
-    if (med.matches) {
-        console.log('med')
-        trafficChart.options.scales.xAxes[0].ticks.fontSize = 12
-        trafficChart.options.scales.yAxes[0].ticks.fontSize = 12
-        console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-    } 
-    if (lg.matches) {
-        console.log('lg')
-        trafficChart.options.scales.xAxes[0].ticks.fontSize = 16
-        trafficChart.options.scales.yAxes[0].ticks.fontSize = 16
-        console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-    }
-});
+// const xs = window.matchMedia( "(min-width: 320px)" );
+// const med = window.matchMedia( "(min-width: 768px)" );
+// const lg = window.matchMedia( "(min-width: 1024px)" );
+// window.addEventListener('resize', function widthChange() {
+//     if (xs.matches) {
+//         console.log('xs')
+//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 8
+//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 8
+//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
+//     } 
+//     if (med.matches) {
+//         console.log('med')
+//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 12
+//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 12
+//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
+//     } 
+//     if (lg.matches) {
+//         console.log('lg')
+//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 16
+//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 16
+//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
+//     }
+// });
 
 
 // if(lg.matches) {

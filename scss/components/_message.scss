@@ -1,0 +1,45 @@
+.message {
+    @include flexlayout() {
+        flex-direction: column;
+    }
+
+    padding: 0 15px;
+}
+
+.message h3 {
+    margin-left: 20px;
+}
+
+.widget-container {
+    @include flexlayout() {
+        flex-direction: column;
+    }
+
+    & input[type=text],
+    textarea,
+    button {
+        margin: 10px auto;
+        border: inset 1px $gray-lightest;
+        border-radius: 5px;
+    }
+
+    & input,
+    textarea {
+        width: 90%;
+        padding: 10px 5px;
+    }
+
+    & textarea {
+        min-height: 100px;
+    }
+
+    & .button-primary {
+        margin-top: auto;
+        width: 90%;
+        padding: 10px 0;
+        color: #fff;
+        background-color: $main-background;
+        border: none;
+        border-radius: 5px;
+    }
+}

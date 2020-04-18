@@ -1,13 +1,12 @@
+.traffic {
+    border-bottom: 1px solid $gray-lightest;
+    padding-bottom: 10px;
+}
+
 .traffic-header {
     @include flexlayout() {
         justify-content: space-between;
     }
-}
-
-.traffic-header,
-.traffic-header h3 {
-    font-size: 0.66rem;
-    font-weight: bold;
 }
 
 .traffic-nav li {
