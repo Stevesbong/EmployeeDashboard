@@ -8,7 +8,7 @@ Preview is not ready yet.
 
 ### Description
 
-Created a Employee Dashboard with HTML, CSS(Sass), JavaScript, and chart.js library.
+Created a Responsive Employee Dashboard Web App with HTML, CSS(Sass), JavaScript, and chart.js library.
 
 
 
