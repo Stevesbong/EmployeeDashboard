@@ -3,6 +3,8 @@
 
 Website preview: 
 
+<img src="https://github.com/Stevesbong/Stevesbong.github.io/blob/master/img/EmployeeDashboard.png" width="600" height="700">
+
 Preview is not ready yet.
 
 
