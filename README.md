@@ -1,8 +1,6 @@
 # [EmployeeDashboard](https://stevesbong.github.io/EmployeeDashboard)
 
 
-# [Portfolio Website](https://stevesbong.github.io/)
-
 Website preview: 
 
 Preview is not ready yet.
