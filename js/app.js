@@ -89,6 +89,11 @@ let trafficChart = new Chart( trafficCanvas, {
 } );
 
 
+/* ============================================= */
+/*                 Hourly Chart                  */
+/* ============================================= */
+
+
 
 /* ============================================= */
 /*                 Daily Chart                   */
@@ -125,6 +130,19 @@ let dailyChart = new Chart( dailyCanvas, {
     data: dailyData,
     options: dailyOptions
 } );
+
+
+
+/* ============================================= */
+/*                 Weekly Chart                  */
+/* ============================================= */
+
+
+
+
+/* ============================================= */
+/*                 Monthly Chart                 */
+/* ============================================= */
 
 
 /* ============================================= */
@@ -185,6 +203,9 @@ send.addEventListener('click', (e) => {
         alert(`Message successfully sent to: ${user.value}`);
     }
 } );
+
+
+// LOCAL STORAGE SECTION TO SAVE SETTINGS
 
 
 
