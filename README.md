@@ -22,11 +22,11 @@ Created a Responsive Employee Dashboard Web App with HTML, CSS(Sass), JavaScript
 
 2. Displays at least two notifications at the same time when the user clicks the alerts icon (this could be a pop-up window or dropdown menu).
 
-3. Includes navigation allowing user to switch between viewing an Hourly, Daily, and Weekly chart.
+<del>3. Includes navigation allowing user to switch between viewing an Hourly, Daily, and Weekly chart.</del>
 
-4. Hourly, Daily, Weekly and Monthly buttons display a different line chart on click.
+<del>4. Hourly, Daily, Weekly and Monthly buttons display a different line chart on click.</del>
 
-<del>5. Displays working autocomplete search input field that lets the user search for members.</del>
+5. Displays working autocomplete search input field that lets the user search for members.
 
 <!-- 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
