@@ -585,6 +585,11 @@ nav img {
   color: #fff;
 }
 
+.active {
+  background-color: #63cc82;
+  color: #fff;
+}
+
 .social {
   padding: 20px 0;
   border-top: 1px solid #d1d1d1;

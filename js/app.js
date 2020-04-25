@@ -29,6 +29,18 @@ alertBanner.addEventListener('click', e => {
 
 const trafficCanvas = document.getElementById("traffic-chart").getContext('2d');
 
+// SET ACTIVE CLASS TO TRAFFIC NAV LINK WHEN IS CLICKED
+const trafficNavData = document.querySelector('.traffic-nav');
+// HOURLY DATA SET
+const hourlyDataValues = [10,30,00,40,10,50,10,20,30,40,40,40];
+// DAILY DATA SET
+const dailyDataValues = [ 750, 1250, 1000, 2000, 1500, 1750, 
+    1250, 1850, 2250, 1500, 2500 ];
+// WEEKLY DATA SET
+const weeklyDataValues = [530,450,919,1200,480,2000,501,667,992,1400,1433,2009];
+// MONTHLY DATA SET
+const monthlyDataValues = [4500,6000,4000,7000,5500,3003,1000,7500,2000,3500,6500];
+
 let trafficData = {
     labels: [ "16-22", "23-29", "30-5", "6-12", "13-19", 
     "20-26", "27-3", "4-10", "11-17", "18-24", "25-31" ],
@@ -89,9 +101,43 @@ let trafficChart = new Chart( trafficCanvas, {
 } );
 
 
+// ADD EVENT LISTENER TO UNORDER LIST TO CHANGE CHART
+trafficNavData.addEventListener('click', e => {
+    // TARGET BY UNORDER LIST TEXT CONTENT
+    console.log(e.target)
+    if(e.target.textContent === 'Hourly') {
+        trafficChart.data.datasets[0].data = hourlyDataValues;
+        e.target.classList.add('active')
+        trafficChart.update();
+    } else if (e.target.textContent === 'Daily') {
+        trafficChart.data.datasets[0].data = dailyDataValues;
+        trafficChart.update();
+    } else if (e.target.textContent === 'Weekly') {
+        trafficChart.data.datasets[0].data = weeklyDataValues;
+        trafficChart.update();
+    } else if (e.target.textContent === 'Monthly') {
+        trafficChart.data.datasets[0].data = monthlyDataValues;
+        trafficChart.update();
+    }
+})
+
+
 /* ============================================= */
-/*                 Hourly Chart                  */
+/*              Active calss toggle              */
 /* ============================================= */
+
+let nav = document.getElementById("navList")
+let navList = nav.getElementsByClassName("traffic-nav-link")
+
+console.log(navList)
+
+for( let i = 0; i < navList.length; i++ ) {
+    navList[i].addEventListener('click', (e)=> {
+        let current = document.getElementsByClassName("active")[0];
+        current.classList.remove("active");
+        e.target.classList.add("active");
+    } );
+}
 
 
 
@@ -130,19 +176,6 @@ let dailyChart = new Chart( dailyCanvas, {
     data: dailyData,
     options: dailyOptions
 } );
-
-
-
-/* ============================================= */
-/*                 Weekly Chart                  */
-/* ============================================= */
-
-
-
-
-/* ============================================= */
-/*                 Monthly Chart                 */
-/* ============================================= */
 
 
 /* ============================================= */
