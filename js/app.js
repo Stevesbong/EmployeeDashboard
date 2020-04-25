@@ -31,15 +31,20 @@ const trafficCanvas = document.getElementById("traffic-chart").getContext('2d');
 
 // SET ACTIVE CLASS TO TRAFFIC NAV LINK WHEN IS CLICKED
 const trafficNavData = document.querySelector('.traffic-nav');
+const navList = trafficNavData.getElementsByClassName("traffic-nav-link")
+
 // HOURLY DATA SET
-const hourlyDataValues = [10,30,00,40,10,50,10,20,30,40,40,40];
+const hourlyDataValues = [ 10, 30, 00, 40, 10, 50, 10, 20, 30, 40, 40, 40 ];
+
 // DAILY DATA SET
 const dailyDataValues = [ 750, 1250, 1000, 2000, 1500, 1750, 
     1250, 1850, 2250, 1500, 2500 ];
+
 // WEEKLY DATA SET
-const weeklyDataValues = [530,450,919,1200,480,2000,501,667,992,1400,1433,2009];
+const weeklyDataValues = [ 530, 450, 919, 1200, 480, 2000, 501, 667, 992, 1400, 1433, 2009 ];
+
 // MONTHLY DATA SET
-const monthlyDataValues = [4500,6000,4000,7000,5500,3003,1000,7500,2000,3500,6500];
+const monthlyDataValues = [ 4500, 6000, 4000, 7000, 5500, 3003, 1000, 7500, 2000, 3500, 6500 ];
 
 let trafficData = {
     labels: [ "16-22", "23-29", "30-5", "6-12", "13-19", 
@@ -47,8 +52,7 @@ let trafficData = {
     
     datasets: [ { 
         
-        data: [ 750, 1250, 1000, 2000, 1500, 1750, 
-            1250, 1850, 2250, 1500, 2500 ],
+        data: dailyDataValues,
         backgroundColor: "rgba( 116, 119, 191, .3)",
         borderWidth: 1,
         pointBackgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -101,44 +105,37 @@ let trafficChart = new Chart( trafficCanvas, {
 } );
 
 
+/* ============================================= */
+/*      Active calss toggle and data change      */
+/* ============================================= */
+
+function changeDataAndToggleActive(event, value) {
+    // GET CURRENT ACTIVE CLASS AND REMOVE
+    let current = document.getElementsByClassName("active")[0];
+    current.classList.remove("active");
+
+    // ADD ACTIVE CLASS TO CLICKED ELEMENT
+    event.classList.add("active");
+
+    // CHANGE CHART DATA SET WHEN CLICKED
+    trafficChart.data.datasets[0].data = value;
+    trafficChart.update()
+}
+
 // ADD EVENT LISTENER TO UNORDER LIST TO CHANGE CHART
 trafficNavData.addEventListener('click', e => {
     // TARGET BY UNORDER LIST TEXT CONTENT
     console.log(e.target)
     if(e.target.textContent === 'Hourly') {
-        trafficChart.data.datasets[0].data = hourlyDataValues;
-        e.target.classList.add('active')
-        trafficChart.update();
+        changeDataAndToggleActive(e.target, hourlyDataValues)
     } else if (e.target.textContent === 'Daily') {
-        trafficChart.data.datasets[0].data = dailyDataValues;
-        trafficChart.update();
+        changeDataAndToggleActive(e.target, dailyDataValues)
     } else if (e.target.textContent === 'Weekly') {
-        trafficChart.data.datasets[0].data = weeklyDataValues;
-        trafficChart.update();
+        changeDataAndToggleActive(e.target, weeklyDataValues)
     } else if (e.target.textContent === 'Monthly') {
-        trafficChart.data.datasets[0].data = monthlyDataValues;
-        trafficChart.update();
+        changeDataAndToggleActive(e.target, monthlyDataValues)
     }
 })
-
-
-/* ============================================= */
-/*              Active calss toggle              */
-/* ============================================= */
-
-let nav = document.getElementById("navList")
-let navList = nav.getElementsByClassName("traffic-nav-link")
-
-console.log(navList)
-
-for( let i = 0; i < navList.length; i++ ) {
-    navList[i].addEventListener('click', (e)=> {
-        let current = document.getElementsByClassName("active")[0];
-        current.classList.remove("active");
-        e.target.classList.add("active");
-    } );
-}
-
 
 
 /* ============================================= */
