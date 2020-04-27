@@ -18,7 +18,7 @@ Created a Responsive Employee Dashboard Web App with HTML, CSS(Sass), JavaScript
 
 
 #### To Do List
-1. Local storage is used to save the settings. When page is reloaded the settings are remembered.
+<del>1. Local storage is used to save the settings. When page is reloaded the settings are remembered.</del>
 
 2. Displays at least two notifications at the same time when the user clicks the alerts icon (this could be a pop-up window or dropdown menu).
 

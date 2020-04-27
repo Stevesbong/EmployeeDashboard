@@ -248,6 +248,16 @@ send.addEventListener('click', (e) => {
 
 // LOCAL STORAGE SECTION TO SAVE SETTINGS
 
+const emailCheckbox = document.querySelector(".email-checkbox");
+const profileCheckbox = document.querySelector(".profile-checkbox");
+const timeZone = document.getElementById("timezone");
+const saveBtn = document.getElementById("save");
+const cancelBtn = document.getElementById("cancel");
+
+// test
+const settingTest = document.querySelector(".settings")
+
+// IF LOCALSTORAGE SUPPORTS FUNCTION
 function supportsLocalStorage() {
     try{
         return 'localStorage' in window && window['localStorage'] !== null;
@@ -255,81 +265,65 @@ function supportsLocalStorage() {
         return false;
     }
 }
-window.onload = function () {
-    const emailCheckbox = document.querySelector(".email-checkbox");
-    const profileCheckbox = document.querySelector(".profile-checkbox");
-    const timeZone = document.getElementById("timezone");
-    const saveBtn = document.getElementById("save");
-    const cancelBtn = document.getElementById("cancel");
 
-    if(supportsLocalStorage) {
-        console.log('yes support');
-        saveBtn.addEventListener('click', () => {
-            console.log('btn event')
-            localStorage.setItem('email', emailCheckbox.checked);
-            localStorage.setItem('profile', profileCheckbox.checked);
-            localStorage.setItem('timeZone', timeZone.selectedIndex);
-        })
-        emailCheckbox.checked = this.localStorage.getItem('email');
-        profileCheckbox.checked = this.localStorage.getItem('profile');
+function loadSettings() {
+    if (localStorage.getItem('email') === 'true') {
+        emailCheckbox.checked = true;
+    } else {
+        emailCheckbox.checked = false;
     }
-    console.log(emailCheckbox.checked);
-    console.log(this.localStorage.getItem('email'))
-    console.log(this.localStorage.getItem('profile'))
+    if(localStorage.getItem('profile') === 'true') {
+        profileCheckbox.checked = true;
+    } else {
+        profileCheckbox.checked = false;
+    }
+    if(localStorage.getItem('timeZone') !== null) {
+        timeZone.value = localStorage.getItem('timeZone');
+    }
 }
 
-emailCheckbox.checked = JSON.parse(localStorage.getItem('email'));
+function timeZoneError() {
+    const p = this.document.createElement("P");
+    p.textContent = 'Select Timezone please..';
+    p.style.color = "red";
+    p.style.textAlign = "center";
 
-console.log(localStorage.getItem('email'))
+    settingTest.insertBefore(p, document.querySelector(".settings-button"));
 
+    setTimeout( () => {
+        p.style.display = "none"
+    }, 2000)
+}
 
+// WHEN PAGE LOAD, CHECK LOCALSTORAGE IS SUPPORT BY CURRENT BROWSER
+window.onload = function () {
+    if(supportsLocalStorage) {
+        // GET SETTINGS FROM LOCALSTORAGE
+        loadSettings();        
+        saveBtn.addEventListener('click', () => {
+            // IF TIMEZONE SELECTED,
+            if(timeZone.options.selectedIndex !== 0 ) {
+                localStorage.setItem('email', emailCheckbox.checked);
+                localStorage.setItem('profile', profileCheckbox.checked);
+                localStorage.setItem('timeZone', timeZone.value);
+            } else { 
+            // IF TIMEZONE IS NOT SELECTED, SEND ERROR MESSAGE OUT TO USER
+                timeZoneError();
+            }
+        })
+        cancelBtn.addEventListener('click', () => {
+            // CLEAR THE LOCALSTORAGE 
+            // 1.
+            localStorage.clear();
+            // 2.
+            // localStorage.removeItem('email');
+            // localStorage.removeItem('profile');
+            // localStorage.removeItem('timeZone');
 
-
-
-
-
-
-
-
-
-
-/* ============================================= */
-/*                 MediaQuery JS Testing         */
-/* ============================================= */
-
-// const xs = window.matchMedia( "(min-width: 320px)" );
-// const med = window.matchMedia( "(min-width: 768px)" );
-// const lg = window.matchMedia( "(min-width: 1024px)" );
-// window.addEventListener('resize', function widthChange() {
-//     if (xs.matches) {
-//         console.log('xs')
-//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 8
-//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 8
-//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-//     } 
-//     if (med.matches) {
-//         console.log('med')
-//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 12
-//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 12
-//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-//     } 
-//     if (lg.matches) {
-//         console.log('lg')
-//         trafficChart.options.scales.xAxes[0].ticks.fontSize = 16
-//         trafficChart.options.scales.yAxes[0].ticks.fontSize = 16
-//         console.log(trafficChart.options.scales.xAxes[0].ticks.fontSize)
-//     }
-// });
-
-
-// if(lg.matches) {
-//     trafficChart.options.scales.xAxes[0].ticks.fontSize = 20
-//     console.log('xsmall')
-
-// } else if (med.matches) {
-//     trafficChart.options.scales.xAxes[0].ticks.fontSize = 12
-//     console.log('medium')
-// } else if (xs.matches) {
-//     trafficChart.options.scales.xAxes[0].ticks.fontSize = 8
-// }
-
+            // CHANGE VALUES TO DEFAULT
+            timeZone.value = timeZone.options[0].value;
+            emailCheckbox.checked = false
+            profileCheckbox.checked = false
+        })
+    }
+}
