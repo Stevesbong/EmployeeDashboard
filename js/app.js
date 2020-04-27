@@ -122,18 +122,29 @@ function changeDataAndToggleActive(event, value) {
     trafficChart.update()
 }
 
+// trafficTime = {
+//     "Hourly": changeDataAndToggleActive(e.target, hourlyDataValues),
+//     "Daily": changeDataAndToggleActive(e.target, dailyDataValues),
+//     "Weekly": changeDataAndToggleActive(e.target, weeklyDataValues),
+//     "Monthly": changeDataAndToggleActive(e.target, monthlyDataValues),
+// }
+
+// trafficTime[e.target.textContent]
+
 // ADD EVENT LISTENER TO UNORDER LIST TO CHANGE CHART
 trafficNavData.addEventListener('click', e => {
     // TARGET BY UNORDER LIST TEXT CONTENT
-    console.log(e.target)
-    if(e.target.textContent === 'Hourly') {
-        changeDataAndToggleActive(e.target, hourlyDataValues)
-    } else if (e.target.textContent === 'Daily') {
-        changeDataAndToggleActive(e.target, dailyDataValues)
-    } else if (e.target.textContent === 'Weekly') {
-        changeDataAndToggleActive(e.target, weeklyDataValues)
-    } else if (e.target.textContent === 'Monthly') {
-        changeDataAndToggleActive(e.target, monthlyDataValues)
+    const list = e.target;
+    const listValue = e.target.textContent;
+    // console.log(list)
+    if(listValue === 'Hourly') {
+        changeDataAndToggleActive(list, hourlyDataValues)
+    } else if (listValue === 'Daily') {
+        changeDataAndToggleActive(list, dailyDataValues)
+    } else if (listValue === 'Weekly') {
+        changeDataAndToggleActive(list, weeklyDataValues)
+    } else if (listValue === 'Monthly') {
+        changeDataAndToggleActive(list, monthlyDataValues)
     }
 })
 
@@ -237,10 +248,39 @@ send.addEventListener('click', (e) => {
 
 // LOCAL STORAGE SECTION TO SAVE SETTINGS
 
+function supportsLocalStorage() {
+    try{
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+window.onload = function () {
+    const emailCheckbox = document.querySelector(".email-checkbox");
+    const profileCheckbox = document.querySelector(".profile-checkbox");
+    const timeZone = document.getElementById("timezone");
+    const saveBtn = document.getElementById("save");
+    const cancelBtn = document.getElementById("cancel");
 
+    if(supportsLocalStorage) {
+        console.log('yes support');
+        saveBtn.addEventListener('click', () => {
+            console.log('btn event')
+            localStorage.setItem('email', emailCheckbox.checked);
+            localStorage.setItem('profile', profileCheckbox.checked);
+            localStorage.setItem('timeZone', timeZone.selectedIndex);
+        })
+        emailCheckbox.checked = this.localStorage.getItem('email');
+        profileCheckbox.checked = this.localStorage.getItem('profile');
+    }
+    console.log(emailCheckbox.checked);
+    console.log(this.localStorage.getItem('email'))
+    console.log(this.localStorage.getItem('profile'))
+}
 
+emailCheckbox.checked = JSON.parse(localStorage.getItem('email'));
 
-
+console.log(localStorage.getItem('email'))
 
 
 
