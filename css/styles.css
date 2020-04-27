@@ -761,6 +761,13 @@ nav img {
   background-color: #d1d1d1;
 }
 
+.timezone-error {
+  margin-top: 1.9em;
+  color: #e4757a;
+  font-size: 1.2em;
+  text-align: center;
+}
+
 /* ============================================= */
 /*            Toggle-Switch setting              */
 /* ============================================= */

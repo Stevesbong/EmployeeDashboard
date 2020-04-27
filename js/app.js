@@ -284,14 +284,15 @@ function loadSettings() {
 
 function timeZoneError() {
     const p = this.document.createElement("P");
-    p.textContent = 'Select Timezone please..';
-    p.style.color = "red";
-    p.style.textAlign = "center";
+    p.classList.add('timezone-error');
+    timeZone.style.display = "none";
+    p.textContent = 'Select Timezone please . . .';
 
     settingTest.insertBefore(p, document.querySelector(".settings-button"));
 
     setTimeout( () => {
         p.style.display = "none"
+        timeZone.style.display = "block";
     }, 2000)
 }
 

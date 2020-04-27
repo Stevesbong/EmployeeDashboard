@@ -38,6 +38,12 @@
     background-color: $gray-lightest
 }
 
+.timezone-error {
+    margin-top: 1.9em;
+    color: $color-error;
+    font-size: 1.2em;
+    text-align: center;
+}
 
 /* ============================================= */
 /*            Toggle-Switch setting              */
