@@ -286,7 +286,7 @@ function timeZoneError() {
     const p = this.document.createElement("P");
     p.classList.add('timezone-error');
     timeZone.style.display = "none";
-    p.textContent = 'Select Timezone please . . .';
+    p.textContent = 'Please select Timezone before save . . .';
 
     settingTest.insertBefore(p, document.querySelector(".settings-button"));
 
@@ -300,18 +300,22 @@ function timeZoneError() {
 window.onload = function () {
     if(supportsLocalStorage) {
         // GET SETTINGS FROM LOCALSTORAGE
-        loadSettings();        
+        loadSettings();
+
+        // SAVE EMAIL PROFILE TIMEZONE SETTING WHEN CLICK SAVE BUTTON
         saveBtn.addEventListener('click', () => {
+
             // IF TIMEZONE SELECTED,
             if(timeZone.options.selectedIndex !== 0 ) {
                 localStorage.setItem('email', emailCheckbox.checked);
                 localStorage.setItem('profile', profileCheckbox.checked);
                 localStorage.setItem('timeZone', timeZone.value);
-            } else { 
+            } else {
             // IF TIMEZONE IS NOT SELECTED, SEND ERROR MESSAGE OUT TO USER
                 timeZoneError();
             }
         })
+
         cancelBtn.addEventListener('click', () => {
             // CLEAR THE LOCALSTORAGE 
             // 1.
