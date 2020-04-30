@@ -26,7 +26,7 @@ Created a Responsive Employee Dashboard Web App with HTML, CSS(Sass), JavaScript
 
 <del>4. Hourly, Daily, Weekly and Monthly buttons display a different line chart on click.</del>
 
-5. Displays working autocomplete search input field that lets the user search for members.
+<del>5. Displays working autocomplete search input field that lets the user search for members.</del>
 
 <!-- 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported

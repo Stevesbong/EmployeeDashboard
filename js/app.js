@@ -24,6 +24,23 @@ alertBanner.addEventListener('click', e => {
 
 
 /* ============================================= */
+/*                  Notification                 */
+/* ============================================= */
+
+const notificationBellIcon = document.getElementsByClassName('bell')[0];
+const notificationList = document.getElementById('notifications');
+
+notificationBellIcon.addEventListener('click', () => {
+    notificationList.innerHTML = `
+        <ul>
+            <li>notification popup</li>
+            <li>Dawn sent a message to you</li>
+        </ul>
+    `
+})
+
+
+/* ============================================= */
 /*                 Traffic Chart                 */
 /* ============================================= */
 
